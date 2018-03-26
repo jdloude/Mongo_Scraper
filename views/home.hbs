@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/home">Mongo Scraper Homework</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  style="color: white;" href="/saved">Saved</a>
+      </li>
+    </ul>
+    <a id="scrape" class="nav-link"  style="color: white;">Scrape</a>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center font-weight-bold">Mongo News Scrapper</h1>
+    <p class="lead text-center font-weight-bold">New York Times Edition</p>
+  </div>
+</div>
+{{#if news}} {{#each news}}
+<div class="card mx-3 mb-3">
+  <h5 class="card-header">
+    <a href="{{link}}">{{title}}</a>
+    {{#if saved}}
+    <a href="#" data-id="{{_id}}" class="btn btn-danger remove float-right">Remove Article</a>
+    {{else}}
+    <a href="#" data-id="{{_id}}" class="btn btn-dark save float-right">Save Article</a>
+    {{/if}}
+  </h5>
+  <div class="card-body">
+    <p class="card-text">{{summary}}</p>
+  </div>
+</div>
+{{/each}} {{else}}
+<div class="card mx-3 mb-3">
+  <h5 class="card-header text-center">You Must First Scrape the News</h5>
+</div>
+{{/if}}
+
+<div class="modal fade" id="scrapedModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body d-flex align-items-center flex-column">
+        <span class="my-4 h3" id="info">Scraped <span id="number"></span> Items</span>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="assets/js/home.js">
+
+</script>

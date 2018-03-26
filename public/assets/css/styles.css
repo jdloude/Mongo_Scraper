@@ -1,0 +1,42 @@
+.card-header {
+    background-color: rgb(1, 1, 63);
+    color: white;
+}
+
+.card {
+    box-shadow: 5px 5px 5px grey;
+    border-color: grey
+}
+
+.card-header a {
+    color: white;
+}
+
+#scrape:hover {
+    color: blue;
+}
+
+body {
+    background: rgb(160, 160, 160)
+}
+
+.modal .card {
+    box-shadow: none;
+}
+
+.modal .card button {
+    padding-top: 3px;
+}
+
+.navbar-brand {
+    font-size: 2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.jumbotron * {
+    text-shadow: 1px 1px 2px white;
+}
