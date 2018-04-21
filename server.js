@@ -21,8 +21,8 @@ app.engine(".hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", ".hbs");
 console.log(process.env.port );
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://jdloude:Universal1!@ds041924.mlab.com:41924/heroku_n0ghrl1n"
-
+const MONGODB_URI = process.env.MONGODB_URI
+ 
 // Set mongoose to leverage built in JavaScript ES6 Promises & Connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
